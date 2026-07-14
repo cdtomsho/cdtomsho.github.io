@@ -1,9 +1,0 @@
-notes for working on part 2
-
-- got docked points for no flexbox
-- change default text
-- make nav prettier (colorful box around it?)
-- make slang terms (crag, send, top out, etc.) different color
-- format "Gear Cheat Sheet" 
-- find different images for "essential gear" card and rope gear section--get Joel's stuff?
-- make quotations, italics, boldface consistent for different purposes
