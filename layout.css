@@ -1,0 +1,98 @@
+/* 
+   layout.css
+   handles: page layout, positioning, 
+   floats, grid, overflow, responsiveness
+*/
+
+/* positioning: header/nav */
+header {
+  position: relative;
+}
+
+nav {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* flexbox: nav links laid out in a row */
+nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+/* floated layout: climber spotlight */
+.climber-spotlight figure {
+  float: right;
+  width: 300px;
+  margin: 0 0 10px 20px;
+}
+
+.climber-spotlight img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* overflow handling */
+.climber-spotlight {
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* inline images */
+section > figure img {
+  max-width: 100%;
+  width: 600px;
+  height: auto;
+  display: block;
+}
+
+/* grid layout: homepage highlights */
+.highlights-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* grid display: block element */
+.card {
+  display: block;
+}
+
+/* card images fill column, crop well */
+.card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+/* grid layou: gear cheat sheet description list */
+.glossary dl {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	column-gap: 20px;
+	row-gap: 10px;
+}
+
+/* reponsive design for narrow/mobile screens: @media query */
+@media only screen and (max-width: 600px) {
+ 
+  /* stack highlights grid to single column */
+  .highlights-grid {
+    grid-template-columns: 1fr;
+  }
+ 
+  /* un-float spotlight image so it stacks above text */
+  .climber-spotlight figure {
+    float: none;
+    width: 100%;
+    margin: 0 0 15px 0;
+  }
+ 
+  /* drop nav out of absolute positioning */
+  nav {
+    position: static;
+  }
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- metadata: charset, viewport, description, title -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find a climbing partner near you based on style, experience, and availability.">
+   
+   <title>Find a Partner | Beginner's Guide to Rock Climbing</title>
+
+	<!-- Google fonts: Road Rage for headings, Raleway for body -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=Road+Rage&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- link to CSS files -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="layout.css">
+  </head>
+
+  <body>
+
+    <!-- sectioning element: header contains site title and navigation -->
+    <header>
+      <h1>Beginner's Guide to Rock Climbing</h1>
+
+      <!-- navigation list -->
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="climbing-styles.html">Types of Climbing</a></li>
+          <li><a href="essential-gear.html">Essential Gear</a></li>
+          <li><a href="climbing-partner.html">Find a Partner</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+
+      <section id="find-partner">
+        <h2>Find a Climbing Partner</h2>
+        <p>
+          Fill out the form below, and we'll help match you with a climbing partner who fits your style and schedule!
+        </p>
+		
+		<!-- countdown -->
+		<section id="trip-countdown">
+			<h3>Countdown to Your Next Climbing Trip!</h3>
+			<label for="trip-date">Pick a date:</label>
+			<input type="date" id="trip-date">
+			<button type="button" id="countdown-button">Calculate</button>
+			<p id="countdown-result"></p>
+		</section>
+		
+		<!-- form: multiple fieldsets required -->
+        <form id="partner-form" action="#" method="get">
+
+          <!-- fieldset 1: About You -->
+          <fieldset>
+            <legend>About You</legend>
+
+            <!-- text input with pattern + minlength validation -->
+            <div class="field">
+				<label for="name">Name</label>
+				<input type="text" id="name" name="name" required minlength="2" pattern="[A-Za-z ]+" title="Letters and spaces only, please.">
+			</div>
+
+            <!-- mobile keyboard type: email -->
+            <div class="field">
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" required>
+			</div>
+
+            <!-- date input: birthday -->
+			<div class="field">
+				<label for="birthday">Birthday</label>
+				<input type="date" id="birthday" name="birthday" required>
+			</div>
+		  </fieldset>
+
+          <!-- fieldset 2: Climbing Preferences -->
+          <fieldset>
+            <legend>Climbing Preferences</legend>
+
+            <!-- checkboxes -->
+            <p>Which styles would you like to climb? (check all that apply)</p>
+            <div class="checkbox-group">
+              <input type="checkbox" id="bouldering" name="styles" value="bouldering">
+              <label for="bouldering">Bouldering</label>
+
+              <input type="checkbox" id="sport" name="styles" value="sport">
+              <label for="sport">Sport</label>
+
+              <input type="checkbox" id="trad" name="styles" value="trad">
+              <label for="trad">Trad (intermediate/advanced climbers only, please!)</label>
+            </div>
+
+            <!-- radio buttons -->
+            <p>Experience level</p>
+            <div class="radio-group">
+              <input type="radio" id="beginner" name="experience" value="beginner" required>
+              <label for="beginner">Beginner (less than 1 year)</label>
+
+              <input type="radio" id="intermediate" name="experience" value="intermediate">
+              <label for="intermediate">Intermediate (1-3ish years)</label>
+
+              <input type="radio" id="advanced" name="experience" value="advanced">
+              <label for="advanced">Advanced (3+ years, at least V7 and/or 5.12a)</label>
+            </div>
+
+            <!-- range slider -->
+			<div class="field">
+			    <label for="difficulty">Preferred difficulty (V-scale, boulder grade)</label>
+				<input type="range" id="difficulty" name="difficulty" min="0" max="12" step="1" value="3" oninput="document.getElementById('difficultyOutput').value = this.value">
+				<output id="difficultyOutput" name="difficultyOutput" for="difficulty">3</output>
+			</div>
+          </fieldset>
+
+          <!-- fieldset 3: Availability & Notes -->
+          <fieldset>
+            <legend>Availability &amp; Notes</legend>
+
+            <!-- number spinner -->
+			<div class="field">
+				<label for="frequency">Times per week available to climb</label>
+				<input type="number" id="frequency" name="frequency" min="1" max="7" required>
+			</div>
+
+            <!-- text input + datalist: region -->
+			<div class="field">
+				<label for="region">Your area/region</label>
+				<input type="text" id="region" name="region" list="region-options" required>
+				<datalist id="region-options">
+				  <option value="West">
+				  <option value="Southwest">
+				  <option value="Northwest">
+				  <option value="Midwest">
+				  <option value="Southeast">
+				  <option value="Northeast">
+				  <option value="Outside of continental U.S.">
+				</datalist>
+			</div>
+
+            <!-- selection list -->
+			<div>
+				<label for="time-of-day">Preferred time of day</label>
+				<select id="time-of-day" name="time-of-day">
+				  <option value="morning">Morning</option>
+				  <option value="afternoon">Afternoon</option>
+				  <option value="evening">Evening</option>
+				  <option value="flexible">Flexible</option>
+				</select>
+			</div>
+
+            <!-- textarea -->
+			<div>
+				<label for="notes">Anything else a potential partner should know?</label>
+				<textarea id="notes" name="notes" rows="4" cols="50" maxlength="300"></textarea>
+			</div>
+          </fieldset>
+
+          <!-- submit and reset buttons -->
+          <button type="submit">Submit</button>
+          <button type="reset">Clear Form</button>
+
+        </form>
+      </section>
+
+	<!-- live date/time display -->
+	<p id="current-datetime"></p>
+		
+
+    </main>
+
+    <!-- sectioning element: footer -->
+    <!-- character references: &copy; &mdash; -->
+    <footer>
+      <p>&copy; 2025 Beginner's Guide to Rock Climbing &mdash; Built for educational purposes.</p>
+    </footer>
+
+	<script src="script.js"></script>
+
+  </body>
+</html>

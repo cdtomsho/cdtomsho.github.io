@@ -1,0 +1,163 @@
+/* 
+   style.css
+   handles: colors, fonts, text formatting, 
+   lists, links, backgrounds, borders
+*/
+
+/* 
+   color palette
+   background:    #F2F2F0 (light grey)
+   text:          #333333 (charcoal)
+   accent 1:      #3F6C6B (slate teal)
+   accent 2:      #C4622D (burnt orange)
+*/
+
+/* universal text + background formatting */
+body {
+  background-color: #F2F2F0;
+  color: #333333;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* headings */
+h1,
+h2,
+h3 {
+  color: #3F6C6B;
+}
+
+/* Road Rage for h1 font */
+h1 {
+  font-family: 'Road Rage', sans-serif;
+  font-size: 4em;
+}
+
+/* Raleway for h2 and h3 font, for legibility */
+h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 2em;
+}
+ 
+h3 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+/* paragraph text formatting */
+p {
+  line-height: 1.5;
+}
+
+/* text-level class: climber slang terms */
+.climbing-slang {
+  color: #C4622D;
+  font-weight: bold;
+}
+
+/* pseudo-element: drop cap on intro paragraph */
+.intro-text p:first-of-type::first-letter {
+  font-size: 2em;
+  font-weight: bold;
+  color: #C4622D;
+}
+
+/* navigation list formatting */
+nav ul {
+  list-style-type: none;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+/* pseudo classes for hypertext links */
+nav a:link {
+  color: #333333;
+  text-decoration: none;
+}
+
+nav a:visited {
+  color: #3F6C6B;
+}
+
+nav a:hover {
+  color: #C4622D;
+}
+
+/* general hypertext links (outside nav) */
+a:link {
+  color: #C4622D;
+}
+
+a:visited {
+  color: #3F6C6B;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* figure and figcaption formatting */
+figcaption {
+  font-style: italic;
+  color: #555555;
+}
+
+/* contextual selector: aside nested inside a section */
+section aside {
+  background-color: #E8E4DD;
+  border: 1px solid #3F6C6B;
+  border-left: 4px solid #C4622D;
+  border-radius: 6px;
+  padding: 15px 20px;
+}
+
+/* attribute selector example: links pointing to external/local html pages */
+a[href$=".html"] {
+  font-weight: bold;
+}
+
+/* glossary box */
+.glossary {
+  background-color: #F2F2F0;
+  border: 1px solid #3F6C6B;
+  border-radius: 6px;
+  padding: 10px 15px;
+}
+
+/* glossary description term */
+.glossary dt {
+  font-weight: bold;
+  color: #3F6C6B;
+  margin-top: 10px;
+}
+
+/* footer formatting */
+footer {
+  background-color: #3F6C6B;
+  color: #F2F2F0;
+  text-align: center;
+}
+ 
+/* ---- Form Styles ---- */
+ 
+/* focus pseudo-class: format valid and invalid fields */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #3F6C6B;
+  background-color: #ffffff;
+}
+
+/* valid field */
+form.submitted input:focus:valid {
+  outline: 2px solid #4a7c59;
+}
+ 
+/* invalid field */
+form.submitted input:focus:invalid {
+  outline: 2px solid #C4622D;
+}
